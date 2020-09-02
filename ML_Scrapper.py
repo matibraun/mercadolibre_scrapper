@@ -1,7 +1,5 @@
 from create_database import create_database
 from web_retriever import get_url
-from bs4 import BeautifulSoup
-
 
 print ("\n ----------------------------")
 print ("| Welcome to Mati's Scrapper |")
