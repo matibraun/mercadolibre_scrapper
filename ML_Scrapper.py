@@ -55,11 +55,11 @@ while page_num != 0: #itera pagina por pagina
         else:
             link = 'N/A'
 
-
+#Appendea la data al dict info
         info[index] = [index, geographic_area, price_symbol, price, surface, link]
 
 
-    if len(items) != 0:
+    if len(items) != 0: #para terminar o no el loop por pagina
         page_num = page_num + len(items)
     else:
         page_num = 0
