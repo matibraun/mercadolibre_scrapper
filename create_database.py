@@ -7,7 +7,7 @@ def create_database():
 
         ml_scrapper = sqlite3.connect('ml_scrapper.db')
         cursor = ml_scrapper.cursor()
-        cursor.execute("CREATE TABLE ESCOBAR (listing_code INTEGER, area TEXT, price_symbol VARCHAR (10), price INTEGER, surface INTEGER, link TEXT)")
+        cursor.execute("CREATE TABLE ESCOBAR (index_ INTEGER, geographic_area TEXT, price_symbol VARCHAR (10), price INTEGER, surface INTEGER, link TEXT)")
         ml_scrapper.commit()
         ml_scrapper.close()
 
