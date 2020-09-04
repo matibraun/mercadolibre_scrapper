@@ -85,7 +85,6 @@ while page_num != 0: #itera pagina por pagina
 
     if len(items) != 0: #para terminar o no el loop por pagina
         page_num = page_num + len(items)
-        page_num = 0
     else:
         page_num = 0
 
