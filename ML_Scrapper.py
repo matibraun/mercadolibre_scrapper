@@ -22,7 +22,6 @@ while page_num != 0: #itera pagina por pagina
     for item in items:
 
         index += 1
-        print (index)
 
         geographic_area = item.find('span', class_="ui-search-item__group__element ui-search-item__location")
         if geographic_area != None:
@@ -64,7 +63,7 @@ while page_num != 0: #itera pagina por pagina
     else:
         page_num = 0
 
-print ('Loading info to database.')
+print ('Loading info to database...\n')
 
 ml_scrapper = sqlite3.connect('ml_scrapper.db')
 cursor = ml_scrapper.cursor()
@@ -77,4 +76,4 @@ for item in info:
 ml_scrapper.commit()
 ml_scrapper.close()
 
-print ('Info was loaded to the database successfully')
+print ('Info was loaded to the database successfully.\n')
