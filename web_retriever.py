@@ -13,5 +13,3 @@ def get_url(web, page_number):
     soup = BeautifulSoup(url_processed, 'html.parser')
 
     return soup
-
-#get_url('https://inmuebles.mercadolibre.com.ar/terrenos-lotes/venta/bsas-gba-norte/escobar/', '1')

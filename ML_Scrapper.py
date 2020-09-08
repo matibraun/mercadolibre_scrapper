@@ -9,7 +9,9 @@ print (" ----------------------------\n")
 
 create_database()
 
-url = 'https://inmuebles.mercadolibre.com.ar/terrenos-lotes/venta/bsas-gba-norte/escobar/'
+#url = 'https://inmuebles.mercadolibre.com.ar/terrenos-lotes/venta/bsas-gba-norte/escobar/'
+url = 'https://inmuebles.mercadolibre.com.ar/bsas-gba-norte/escobar/ingeniero-maschwitz/maschwitz'
+
 
 page_num = 1
 index = 0
@@ -80,7 +82,7 @@ while page_num != 0: #itera pagina por pagina
             link = 'N/A'
 
 #Appendea la data al dict info
-        info[index] = [index, geographic_area, price_symbol, price, surface_description, surface_symbol, surface_from, surface_to, surface_total, link]
+        info[index] = [index, geographic_area, price_symbol, price, surface_description, surface_symbol, surface_total, surface_from, surface_to, link]
 
 
     if len(items) != 0: #para terminar o no el loop por pagina
