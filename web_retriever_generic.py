@@ -3,7 +3,7 @@ import requests
 
 def get_url(search, page_num):
 
-    url_temp = 'https://listado.mercadolibre.com.ar/' + f'{search}#D[A:{search}]'
+    url_temp = 'https://listado.mercadolibre.com.ar/' + f'{search.replace(" ", "-")}#D[A:{search.replace(" ", "%20")}]'
 
     print (f'\nRetrieving the URL {url_temp}.')
 

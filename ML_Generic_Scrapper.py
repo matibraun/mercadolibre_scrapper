@@ -1,7 +1,7 @@
 from create_database_generic import create_database
 from web_retriever_generic import get_url
 import sqlite3
-import re
+#import re
 
 print ("\n ----------------------------")
 print ("| Welcome to Mati's Scrapper |")
@@ -10,7 +10,7 @@ print (" ----------------------------\n")
 
 data_base_name = input('Please input the name for the database you want to create to save the data in.\n'
                        '--->')
-create_database(data_base_name)
+database_with_extention = create_database(data_base_name)
 
 
 search = input('What do you wish to scrap in MercadoLibre.com.ar?\n'
@@ -29,7 +29,9 @@ while page_num != 0: #itera pagina por pagina
 
         index += 1
 
-        description = item.find('h2', class_="ui-search-item__title ui-search-item__group__element")
+#        description = item.find('h2', class_="ui-search-item__title ui-search-item__group__element")
+        description = item.find('h2', class_="ui-search-item__title")
+
         if description != None:
             description = description.text.strip()
         else:
@@ -100,17 +102,17 @@ while page_num != 0: #itera pagina por pagina
     else:
         page_num = 0
 
-print ('Loading info into database...\n')
+print (f'Loading info into database {database_with_extention}...\n')
 
-lolo = sqlite3.connect('lolo.db')
-cursor = lolo.cursor()
+db = sqlite3.connect(database_with_extention)
+cursor = db.cursor()
 
 for item in info:
 
     ingreso = [(info[item][0], info[item][1], info[item][2], info[item][3], info[item][4], info[item][5], info[item][6], info[item][7], info[item][8], info[item][9], info[item][10])]
     cursor.executemany("INSERT INTO SCRAPPED_INFO VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ingreso)
 
-lolo.commit()
-lolo.close()
+db.commit()
+db.close()
 
 print ('Info was loaded to the database successfully.\n')

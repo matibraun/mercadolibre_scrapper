@@ -13,5 +13,7 @@ def create_database(database_name):
 
         print ('Database created successfully.\n')
 
+        return database_name_with_extention
+
     except sqlite3.OperationalError:
         pass
