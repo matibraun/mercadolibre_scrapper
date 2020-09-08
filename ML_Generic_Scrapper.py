@@ -102,15 +102,15 @@ while page_num != 0: #itera pagina por pagina
 
 print ('Loading info into database...\n')
 
-ml_scrapper = sqlite3.connect('ml_scrapper.db')
-cursor = ml_scrapper.cursor()
+lolo = sqlite3.connect('lolo.db')
+cursor = lolo.cursor()
 
 for item in info:
 
-    ingreso = [(info[item][0], info[item][1], info[item][2], info[item][3], info[item][4], info[item][5], info[item][6], info[item][7], info[item][8], info[item][9])]
-    cursor.executemany("INSERT INTO ESCOBAR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ingreso)
+    ingreso = [(info[item][0], info[item][1], info[item][2], info[item][3], info[item][4], info[item][5], info[item][6], info[item][7], info[item][8], info[item][9], info[item][10])]
+    cursor.executemany("INSERT INTO SCRAPPED_INFO VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ingreso)
 
-ml_scrapper.commit()
-ml_scrapper.close()
+lolo.commit()
+lolo.close()
 
 print ('Info was loaded to the database successfully.\n')
